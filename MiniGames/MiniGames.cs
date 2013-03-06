@@ -101,7 +101,7 @@ namespace MiniGames
     {
         private static int bet; //Holds the bet information
 
-        public static void start()
+        public static void start() //Signals the start of the program
         {
             Console.WriteLine("You will guess a number 1-5 if the number is correct you win");
             bet = BetSystem.placeBet();

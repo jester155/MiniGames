@@ -51,6 +51,8 @@ namespace GameConsole
 
                 bool c = Bank.Money.canContinue();
 
+                //This menu needs to be reworked for proper functionality.
+                  //Right now it needs to be able to read only yes or no and present an error otherwise
                 if (c == true)
                 {
                     Console.WriteLine("Would you like to continue?");
@@ -77,6 +79,7 @@ namespace GameConsole
             Console.WriteLine("Would you like to start a new game?");
             string d = Console.ReadLine();
 
+            //Will Reset the money if they wish to play a new game
             if (d.Equals("yes"))
             {
                 Money.resetMoney();
