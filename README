@@ -1,1 +1,9 @@
-"This is a simple Console Game with a money system" 
+MiniGames
+==================
+
+This is a simple program with several MiniGames
+
+-Coin Flip
+-Guess a Number
+
+This Game also includes a Banking system which tracks a user amount and edit its appropriatly.
