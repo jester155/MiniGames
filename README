@@ -7,3 +7,5 @@ This is a simple program with several MiniGames
 - Guess a Number
 
 This Game also includes a Banking system which tracks a user amount and edit its appropriatly.
+
+To launch the application navigate to MiniGames/MiniGames/bin/Debug/MiniGames.eve
