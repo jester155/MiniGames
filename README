@@ -8,4 +8,4 @@ This is a simple program with several MiniGames
 
 This Game also includes a Banking system which tracks a user amount and edit its appropriatly.
 
-To launch the application navigate to MiniGames/MiniGames/bin/Debug/MiniGames.exe
+To launch the application navigate to MiniGames/MiniGames/bin/Release/MiniGames.exe
