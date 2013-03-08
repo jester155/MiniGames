@@ -40,7 +40,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CoinFlip.cs" />
-    <Compile Include="CoreObjects.cs" />
     <Compile Include="NumberGuess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -48,6 +47,10 @@
     <ProjectReference Include="..\Bank\Bank.csproj">
       <Project>{4b43f3d1-9c80-4256-90fd-7237756bd63a}</Project>
       <Name>Bank</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CoreObjects\CoreObjects.csproj">
+      <Project>{26264884-7249-49e8-af58-a5bec5ff8ae5}</Project>
+      <Name>CoreObjects</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

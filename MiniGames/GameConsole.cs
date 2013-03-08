@@ -8,8 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Bank;
-using CoreObjects;
 using Games;
+using CoreObjects;
 
 namespace GameConsole
 {
