@@ -7,12 +7,12 @@ using Bank;
 
 namespace CoreObjects
 {
-    class Money
+    public class Money
     {
         public static MoneyHandler money = new MoneyHandler();
     }
     
-    class RandomGenerator
+    public class RandomGenerator
     {
             public static Random r = new Random(Environment.TickCount); // Random generator object
     }

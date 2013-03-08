@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bank
 {
-    class MoneyHandler
+    public class MoneyHandler
     {
         private int money; //The users starting pool of money
 
@@ -62,43 +62,5 @@ namespace Bank
         {
             return money;
         }
-    }
-
-    class Bet
-    {
-        MoneyHandler m = new MoneyHandler();
-        public int placeBet() //Asks the user to place a bet
-        {
-            String bet;
-            bool ok;
-            int b;
-
-            do
-            {
-                Console.WriteLine("How much would you like to bet?");
-                bet = Console.ReadLine();
-
-                b = CoreObjects.Parse.canParse(bet);
-
-                ok = checkBet(b);
-                if (ok == false)
-                    Console.WriteLine("You cannot bet more than ${0}", m.amount());
-            } while (ok != true);
-            return b;
-        }
-
-        private bool checkBet(int x) //Checks the users bet against his current money
-        {
-            if (x > m.amount())
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
-
-
     }
 }

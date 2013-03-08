@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{59C0EBFE-7E29-488A-947C-2A49374FA5A6}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{FD35EFCC-408D-441D-8A33-E7C9F1A8ECE2}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MiniGames</RootNamespace>
-    <AssemblyName>MiniGames</AssemblyName>
+    <RootNamespace>Games</RootNamespace>
+    <AssemblyName>Games</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -41,20 +39,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GameConsole.cs" />
+    <Compile Include="CoinFlip.cs" />
+    <Compile Include="CoreObjects.cs" />
+    <Compile Include="NumberGuess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Bank\Bank.csproj">
       <Project>{4b43f3d1-9c80-4256-90fd-7237756bd63a}</Project>
       <Name>Bank</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Games\Games.csproj">
-      <Project>{fd35efcc-408d-441d-8a33-e7c9f1a8ece2}</Project>
-      <Name>Games</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

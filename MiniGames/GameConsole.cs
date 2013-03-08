@@ -7,9 +7,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MiniGames;
 using Bank;
 using CoreObjects;
+using Games;
 
 namespace GameConsole
 {
@@ -38,7 +38,8 @@ namespace GameConsole
                 Console.WriteLine("1: Coin Flip");
                 Console.WriteLine("2: Guess a Number");
                 string g = Console.ReadLine();
-                int game = CoreObjects.Parse.canParse(g);
+                int game;
+                int.TryParse(g, out game);
 
                 switch (game)
                 {
