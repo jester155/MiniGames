@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bank", "Bank\Bank.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Games", "Games\Games.csproj", "{FD35EFCC-408D-441D-8A33-E7C9F1A8ECE2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreObjects", "CoreObjects\CoreObjects.csproj", "{26264884-7249-49E8-AF58-A5BEC5FF8AE5}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,10 +25,6 @@ Global
 		{FD35EFCC-408D-441D-8A33-E7C9F1A8ECE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD35EFCC-408D-441D-8A33-E7C9F1A8ECE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD35EFCC-408D-441D-8A33-E7C9F1A8ECE2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{26264884-7249-49E8-AF58-A5BEC5FF8AE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{26264884-7249-49E8-AF58-A5BEC5FF8AE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{26264884-7249-49E8-AF58-A5BEC5FF8AE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{26264884-7249-49E8-AF58-A5BEC5FF8AE5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

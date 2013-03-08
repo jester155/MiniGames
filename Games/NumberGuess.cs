@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Bank;
-using CoreObjects;
 
 namespace Games
 {
@@ -13,9 +12,9 @@ namespace Games
         private int bet; //Holds the bet information
         Random r = new Random(Environment.TickCount);
         Bet b = new Bet();
+    
         public void start() //Signals the start of the program
         {
-
             Console.WriteLine("You will guess a number 1-5 if the number is correct you win");
             bet = b.placeBet();
             act();

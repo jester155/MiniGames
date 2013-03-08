@@ -26,14 +26,14 @@ namespace Bank
 
                 ok = checkBet(value);
                 if (ok == false)
-                    Console.WriteLine("You cannot bet more than ${0}", m.amount());
+                    Console.WriteLine("You cannot bet more than ${0}", Money.money.amount());
             } while (ok != true);
             return value;
         }
 
         private bool checkBet(int x) //Checks the users bet against his current money
         {
-            if (x > m.amount())
+            if (x > Money.money.amount())
             {
                 return false;
             }

@@ -92,8 +92,8 @@ namespace Games
                 Console.WriteLine(l);
                 win = false;
             }
-            CoreObjects.Money.money.totalOut(bet, win);
-            Console.WriteLine("You now have ${0}", CoreObjects.Money.money.amount());
+            Money.money.totalOut(bet, win);
+            Console.WriteLine("You now have ${0}", Money.money.amount());
         }
 
     }

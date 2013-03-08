@@ -9,7 +9,6 @@ using System.Text;
 using System.Threading.Tasks;
 using Bank;
 using Games;
-using CoreObjects;
 
 namespace GameConsole
 {
@@ -81,14 +80,13 @@ namespace GameConsole
 
         private static void newGame() //Start a new game and resets the money count
         {
-            MoneyHandler money = new MoneyHandler();
             Console.WriteLine("Would you like to start a new game?");
             string d = Console.ReadLine();
 
             //Will Reset the money if they wish to play a new game
             if (d.Equals("yes"))
             {
-                money.resetMoney();
+                Money.money.resetMoney();
                 menu();
             }
             else if (d.Equals("no"))
