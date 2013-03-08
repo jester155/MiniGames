@@ -9,11 +9,13 @@ using System.Text;
 using System.Threading.Tasks;
 using MiniGames;
 using Bank;
+using CoreObjects;
 
 namespace GameConsole
 {
     class Program
     {
+
         static void Main(string[] args)
         {
             Console.ForegroundColor = ConsoleColor.Green;
@@ -25,31 +27,33 @@ namespace GameConsole
 
         private static void menu() //The menu system the is the main controller of the program
         {
+            CoinFlip coin = new CoinFlip();
+            NumberGuess number = new NumberGuess();
             string choice;
 
             do
             {
-                Console.WriteLine("You have ${0}", Money.getMoney());
+                Console.WriteLine("You have ${0}", Money.money.amount());
                 Console.WriteLine("Which game would you like you like to play?");
                 Console.WriteLine("1: Coin Flip");
                 Console.WriteLine("2: Guess a Number");
                 string g = Console.ReadLine();
-                int game = Core.Parse.canParse(g);
+                int game = CoreObjects.Parse.canParse(g);
 
                 switch (game)
                 {
                     case 1:
-                        CoinFlip.start();
+                        coin.start();
                         break;
                     case 2:
-                        NumberGuess.start();
+                        number.start();
                         break;
                     default:
                         choice = "no";
                         break;
                 }
 
-                bool c = Bank.Money.canContinue();
+                bool c = Money.money.canContinue();
 
                 //This menu needs to be reworked for proper functionality.
                   //Right now it needs to be able to read only yes or no and present an error otherwise
@@ -76,13 +80,14 @@ namespace GameConsole
 
         private static void newGame() //Start a new game and resets the money count
         {
+            MoneyHandler money = new MoneyHandler();
             Console.WriteLine("Would you like to start a new game?");
             string d = Console.ReadLine();
 
             //Will Reset the money if they wish to play a new game
             if (d.Equals("yes"))
             {
-                Money.resetMoney();
+                money.resetMoney();
                 menu();
             }
             else if (d.Equals("no"))

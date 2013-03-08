@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bank.cs" />
-    <Compile Include="Core.cs" />
+    <Compile Include="CoreObjects.cs" />
     <Compile Include="MiniGames.cs" />
     <Compile Include="GameConsole.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

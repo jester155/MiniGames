@@ -6,11 +6,16 @@ using System.Threading.Tasks;
 
 namespace Bank
 {
-    class Money
+    class MoneyHandler
     {
-        private static int money = 100; //The users starting pool of money
+        private int money; //The users starting pool of money
 
-        public static void totalOut(int b, bool w) //Calculates the total after the user wins or loses
+        public MoneyHandler()
+        {
+            money = 100;
+        }
+
+        public void totalOut(int b, bool w) //Calculates the total after the user wins or loses
         {
             if (w == true)
             {
@@ -22,7 +27,7 @@ namespace Bank
             }
         }
 
-        public static void riskTotalOut(int b, bool w) //Calculates the total after the user wins or loses
+        public void riskTotalOut(int b, bool w) //Calculates the total after the user wins or loses
         {
             if (w == true)
             {
@@ -34,7 +39,7 @@ namespace Bank
             }
         }
 
-        public static bool canContinue() //Checks to see if the user has enough money to coninue playing
+        public bool canContinue() //Checks to see if the user has enough money to coninue playing
         {
             if (money > 0)
             {
@@ -48,20 +53,21 @@ namespace Bank
             }
         }
 
-        public static void resetMoney()
+        public void resetMoney()
         {
             money = 100;
         }
 
-        public static int getMoney() //Use this to call the current amout of money the user has left
+        public int amount() //Use this to call the current amout of money the user has left
         {
             return money;
         }
     }
 
-    class BetSystem
+    class Bet
     {
-        public static int placeBet() //Asks the user to place a bet
+        MoneyHandler m = new MoneyHandler();
+        public int placeBet() //Asks the user to place a bet
         {
             String bet;
             bool ok;
@@ -72,18 +78,18 @@ namespace Bank
                 Console.WriteLine("How much would you like to bet?");
                 bet = Console.ReadLine();
 
-                b = Core.Parse.canParse(bet);
+                b = CoreObjects.Parse.canParse(bet);
 
                 ok = checkBet(b);
                 if (ok == false)
-                    Console.WriteLine("You cannot bet more than ${0}", Money.getMoney());
+                    Console.WriteLine("You cannot bet more than ${0}", m.amount());
             } while (ok != true);
             return b;
         }
 
-        private static bool checkBet(int x) //Checks the users bet against his current money
+        private bool checkBet(int x) //Checks the users bet against his current money
         {
-            if (x > Money.getMoney())
+            if (x > m.amount())
             {
                 return false;
             }

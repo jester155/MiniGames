@@ -3,9 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Bank;
 
-namespace Core
+namespace CoreObjects
 {
+    class Money
+    {
+        public static MoneyHandler money = new MoneyHandler();
+    }
+    
     class RandomGenerator
     {
             public static Random r = new Random(Environment.TickCount); // Random generator object

@@ -4,28 +4,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Bank;
+using CoreObjects;
 
 namespace MiniGames
 {
     class CoinFlip //Game that flips a coin and askes the user to call heads or tails, best of three wins
     {
-        private static int bet; //Holds the bet information
+        private int bet; //Holds the bet information
 
-        public static void start() //Beginning of the game
+        public void start() //Beginning of the game
         {
+            Bet b = new Bet(); 
             Console.WriteLine("Flip a coin. Best of three and you win.");
-            bet = BetSystem.placeBet(); //Gets the users bet and holds tehe information in bet
+            bet = b.placeBet(); //Gets the users bet and holds tehe information in bet
             flip();
         }
 
-        private static void flip() //Perfors the action of 'flipping' the coin
+        private void flip() //Perfors the action of 'flipping' the coin
         {
             int z = call(); //holds the user input of heads or tails
             int head = 0, tail = 0, coin;
 
             for (int i = 1; i <= 3; i++) //Perfors the coin flip 3 times
             {
-                coin = Core.RandomGenerator.r.Next(0, 2); //Random generator can only choose between 0 or 1
+                coin = CoreObjects.RandomGenerator.r.Next(0, 2); //Random generator can only choose between 0 or 1
 
                 if (coin == 0) //Determines if the coin is heads or tails then tracks how many times heads or tails was chosen was chosen
                 {
@@ -70,7 +72,7 @@ namespace MiniGames
             return x;
         }
 
-        private static void getResult(int t, int h, int f) //Finds the result of the game, wether the user won or lost
+        private void getResult(int t, int h, int f) //Finds the result of the game, wether the user won or lost
         {
             bool win;
             String w = "You Win!";
@@ -91,34 +93,35 @@ namespace MiniGames
                 Console.WriteLine(l);
                 win = false;
             }
-            Money.totalOut(bet, win);
-            Console.WriteLine("You now have ${0}", Money.getMoney());
+            Money.money.totalOut(bet,win);
+            Console.WriteLine("You now have ${0}", Money.money.amount());
         }
 
     }
 
     class NumberGuess //Games where a user guesses a number and matches that agains a random computer guess
     {
-        private static int bet; //Holds the bet information
-
-        public static void start() //Signals the start of the program
+        private int bet; //Holds the bet information
+        Bet b = new Bet();
+        public void start() //Signals the start of the program
         {
+
             Console.WriteLine("You will guess a number 1-5 if the number is correct you win");
-            bet = BetSystem.placeBet();
+            bet = b.placeBet();
             act();
         }
 
-        private static int compChoice() //Randomly generates the computers choice
+        private int compChoice() //Randomly generates the computers choice
         {
-            int comp = Core.RandomGenerator.r.Next(0, 5) + 1;
+            int comp = CoreObjects.RandomGenerator.r.Next(0, 5) + 1;
             return comp;
         }
 
-        private static int askUser() //Asks the user for their input
+        private int askUser() //Asks the user for their input
         {
             Console.WriteLine("What number do you choose?");
             string u = Console.ReadLine();
-            int user = Core.Parse.canParse(u);
+            int user = CoreObjects.Parse.canParse(u);
 
             if (user >= 1 && user <= 5)
             {
@@ -132,14 +135,14 @@ namespace MiniGames
             }
         }
 
-        private static void act() //Performs aprpriate actions with the computer data and user input
+        private void act() //Performs aprpriate actions with the computer data and user input
         {
             int c = compChoice();
             int u = askUser();
             getResult(c, u);
         }
 
-        private static void getResult(int c, int u) //Finds the result of the game wether the user won or lost
+        private void getResult(int c, int u) //Finds the result of the game wether the user won or lost
         {
             bool win;
 
@@ -154,8 +157,8 @@ namespace MiniGames
                 Console.WriteLine("You lost");
                 win = false;
             }
-            Money.riskTotalOut(bet, win);
-            Console.WriteLine("You now have ${0}", Money.getMoney());
+            Money.money.riskTotalOut(bet, win);
+            Console.WriteLine("You now have ${0}", Money.money.amount());
         }
     }
 }
