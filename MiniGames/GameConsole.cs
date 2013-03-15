@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Bank;
 using Games;
+using MiniGames;
 
 namespace GameConsole
 {
