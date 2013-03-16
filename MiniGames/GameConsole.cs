@@ -29,6 +29,7 @@ namespace GameConsole
         {
             CoinFlip coin = new CoinFlip();
             NumberGuess number = new NumberGuess();
+            BlackJack bj = new BlackJack();
             string choice;
 
             do
@@ -37,6 +38,7 @@ namespace GameConsole
                 Console.WriteLine("Which game would you like you like to play?");
                 Console.WriteLine("1: Coin Flip");
                 Console.WriteLine("2: Guess a Number");
+                Console.WriteLine("3: Black Jack");
                 string g = Console.ReadLine();
                 int game;
                 int.TryParse(g, out game);
@@ -48,6 +50,9 @@ namespace GameConsole
                         break;
                     case 2:
                         number.start();
+                        break;
+                    case 3:
+                        bj.start();
                         break;
                     default:
                         choice = "no";

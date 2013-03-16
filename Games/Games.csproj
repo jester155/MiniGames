@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BlackJack.cs" />
     <Compile Include="CoinFlip.cs" />
     <Compile Include="NumberGuess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

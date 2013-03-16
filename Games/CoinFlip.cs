@@ -11,6 +11,7 @@ namespace Games
     {
         private int bet; //Holds the bet information
         Random r = new Random(Environment.TickCount);
+        
         public void start() //Beginning of the game
         {
             Bet b = new Bet();
