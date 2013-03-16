@@ -40,7 +40,7 @@ namespace Games
             int p = 0;
 		    String decision = "hit";
 		
-		    while(p < 21 && decision.Equals("hit"))
+		    while(p < 21 && decision.ToUpper() == "HIT")
             {
 			
 			    p = p + r.Next(0, 11) + 1;

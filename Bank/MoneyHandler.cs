@@ -8,7 +8,7 @@ namespace Bank
 {
     public class MoneyHandler
     {
-        private int money; //.The users starting pool of money
+        private uint money; //.The users starting pool of money
 
         public MoneyHandler()
         {
@@ -19,11 +19,11 @@ namespace Bank
         {
             if (w == true)
             {
-                money = money + b;
+                money = money + (uint)b;
             }
             else
             {
-                money = money - b;
+                money = money - (uint)b;
             }
         }
 
@@ -31,17 +31,17 @@ namespace Bank
         {
             if (w == true)
             {
-                money = money + (b * 2);
+                money = money + ((uint)b * 2);
             }
             else
             {
-                money = money - b;
+                money = money - (uint)b;
             }
         }
 
         public bool canContinue() //.Checks to see if the user has enough money to coninue playing
         {
-            if (money > 0 && money < 9999999)
+            if (money > 0 && money < int.MaxValue)
             {
                 return true;
             }
@@ -58,7 +58,7 @@ namespace Bank
             money = 100;
         }
 
-        public int amount() //.Use this to call the current amout of money the user has left
+        public uint amount() //.Use this to call the current amout of money the user has left
         {
             return money;
         }

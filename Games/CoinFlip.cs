@@ -54,12 +54,12 @@ namespace Games
             Console.WriteLine("Call heads or tails");
             String h = Console.ReadLine();
 
-            if (h.Equals("heads"))
+            if (h.ToUpper() == "HEADS")
             {
                 Console.WriteLine("You have chosen {0}!", h);
                 x = 1;
             }
-            else if (h.Equals("tails"))
+            else if (h.ToUpper() == "TAILS")
             {
                 Console.WriteLine("You have chosen {0}!", h);
                 x = 2;
