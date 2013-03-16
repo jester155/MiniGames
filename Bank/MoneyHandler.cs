@@ -19,7 +19,7 @@ namespace Bank
         {
             if (w == true)
             {
-                money = money + (b * 2);
+                money = money + b;
             }
             else
             {
@@ -31,7 +31,7 @@ namespace Bank
         {
             if (w == true)
             {
-                money = money + (b * 6);
+                money = money + (b * 2);
             }
             else
             {

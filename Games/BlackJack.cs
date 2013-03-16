@@ -40,41 +40,49 @@ namespace Games
             int p = 0;
 		    String decision = "hit";
 		
-		    while(p < 21 && decision.Equals("hit")) {
+		    while(p < 21 && decision.Equals("hit"))
+            {
 			
 			    p = p + r.Next(0, 11) + 1;
 			
-			    Console.WriteLine("You have " + p);
+			    Console.WriteLine("You have {0}", p);
 			
 			    if(p > 21)
 				    decision = "stay";
 			    else 
                 {
 				    Console.WriteLine("Hit or stay?");
-					    decision = Console.ReadLine();
-			    }	
-				
+                    Console.ForegroundColor = ConsoleColor.DarkGreen;
+                        decision = Console.ReadLine();
+                        Console.ResetColor();
+			    }
+
 		    }
-		    n[1] = p;
+            n[1] = p;
         }
 
-        private void getResult(int p , int d) 
+        private void getResult(int d , int p) 
         {
             bool win;
 
             if (p > d && p <= 21)
             {
-                Console.WriteLine("you won!\nYou had: " + p + "\nDealer had: " + d);
+                Console.WriteLine("you won!\nYou have: {0}\nDealer has: {1}", p, d);
                 win = true;
             }
             else if (p > 21)
             {
-                Console.WriteLine("You lost\nYou had: " + p + "\nDealer had: " + d);
+                Console.WriteLine("You lost\nYou have: {0}\nDealer has: {1}", p,  d);
                 win = false;
+            }
+            else if (p < d && d > 21)
+            {
+                Console.WriteLine("You won!\nYou have: {0}\nDealer has: {1}", p, d);
+                win = true;
             }
             else
             {
-                Console.WriteLine("You lost\nYou had: " + p + "\nDealer had: " + d);
+                Console.WriteLine("You lost\nYou have: {0}\nDealer has: {1}", p, d);
                 win = false;
             }
             Money.money.totalOut(n[2], win);
