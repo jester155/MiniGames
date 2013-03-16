@@ -7,26 +7,26 @@ using Bank;
 
 namespace Games
 {
-    public class NumberGuess //Games where a user guesses a number and matches that agains a random computer guess
+    public class NumberGuess //.Games where a user guesses a number and matches that agains a random computer guess
     {
-        private int bet; //Holds the bet information
+        private int bet; //.Holds the bet information
         Random r = new Random(Environment.TickCount);
         Bet b = new Bet();
     
-        public void start() //Signals the start of the program
+        public void start() //.Signals the start of the program
         {
             Console.WriteLine("You will guess a number 1-5 if the number is correct you win");
             bet = b.placeBet();
-            act();
+            getResult(compChoice(), askUser());
         }
 
-        private int compChoice() //Randomly generates the computers choice
+        private int compChoice() //.Randomly generates the computers choice
         {
             int comp = r.Next(0, 5) + 1;
             return comp;
         }
 
-        private int askUser() //Asks the user for their input
+        private int askUser() //.Asks the user for their input
         {
             Console.WriteLine("What number do you choose?");
             string u = Console.ReadLine();
@@ -46,14 +46,7 @@ namespace Games
             }
         }
 
-        private void act() //Performs aprpriate actions with the computer data and user input
-        {
-            int c = compChoice();
-            int u = askUser();
-            getResult(c, u);
-        }
-
-        private void getResult(int c, int u) //Finds the result of the game wether the user won or lost
+        private void getResult(int c, int u) //.Finds the result of the game wether the user won or lost
         {
             bool win;
 

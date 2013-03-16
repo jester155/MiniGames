@@ -7,29 +7,29 @@ using Bank;
 
 namespace Games
 {
-    public class CoinFlip //Game that flips a coin and askes the user to call heads or tails, best of three wins
+    public class CoinFlip //.Game that flips a coin and askes the user to call heads or tails, best of three wins
     {
-        private int bet; //Holds the bet information
+        private int bet; //.Holds the bet information
         Random r = new Random(Environment.TickCount);
         
-        public void start() //Beginning of the game
+        public void start() //.Beginning of the game
         {
             Bet b = new Bet();
             Console.WriteLine("Flip a coin. Best of three and you win.");
-            bet = b.placeBet(); //Gets the users bet and holds tehe information in bet
+            bet = b.placeBet(); //.Gets the users bet and holds tehe information in bet
             flip();
         }
 
-        private void flip() //Perfors the action of 'flipping' the coin
+        private void flip() //.Perfors the action of 'flipping' the coin
         {
-            int z = call(); //holds the user input of heads or tails
+            int z = call(); //.holds the user input of heads or tails
             int head = 0, tail = 0, coin;
 
-            for (int i = 1; i <= 3; i++) //Perfors the coin flip 3 times
+            for (int i = 1; i <= 3; i++) //.Perfors the coin flip 3 times
             {
-                coin = r.Next(0, 2); //Random generator can only choose between 0 or 1
+                coin = r.Next(0, 2); //.Random generator can only choose between 0 or 1
 
-                if (coin == 0) //Determines if the coin is heads or tails then tracks how many times heads or tails was chosen was chosen
+                if (coin == 0) //.Determines if the coin is heads or tails then tracks how many times heads or tails was chosen was chosen
                 {
                     Console.ForegroundColor = ConsoleColor.Blue;
                     Console.WriteLine("Tails");
@@ -47,7 +47,7 @@ namespace Games
             getResult(tail, head, z);
         }
 
-        private static int call() //Gets the user to call heads or tails
+        private static int call() //.Gets the user to call heads or tails
         {
             int x = 0;
 
@@ -72,7 +72,7 @@ namespace Games
             return x;
         }
 
-        private void getResult(int t, int h, int f) //Finds the result of the game, wether the user won or lost
+        private void getResult(int t, int h, int f) //.Finds the result of the game, wether the user won or lost
         {
             bool win;
             String w = "You Win!";

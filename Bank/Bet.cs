@@ -9,7 +9,7 @@ namespace Bank
     public class Bet
     {
         MoneyHandler m = new MoneyHandler();
-        public int placeBet() //Asks the user to place a bet
+        public int placeBet() //.Asks the user to place a bet
         {
             String bet;
             bool ok;
@@ -31,7 +31,7 @@ namespace Bank
             return value;
         }
 
-        private bool checkBet(int x) //Checks the users bet against his current money
+        private bool checkBet(int x) //.Checks the users bet against his current money
         {
             if (x > Money.money.amount())
             {

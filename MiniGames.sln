@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniGames", "MiniGames\MiniGames.csproj", "{59C0EBFE-7E29-488A-947C-2A49374FA5A6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console", "MiniGames\Console.csproj", "{59C0EBFE-7E29-488A-947C-2A49374FA5A6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bank", "Bank\Bank.csproj", "{4B43F3D1-9C80-4256-90FD-7237756BD63A}"
 EndProject

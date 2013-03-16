@@ -12,7 +12,7 @@ namespace Games
         private static Random r = new Random(Environment.TickCount);
         private int[] n = new int[3]; //.Holds dealer score [0], player score [1] and bet information [2]
 
-        public void start()
+        public void start() //.Beginning of the game
         {
             Bet b = new Bet();
             Console.WriteLine("Welcome to Black Jack.\nRemember in this dealer always wins.");
@@ -22,7 +22,7 @@ namespace Games
             getResult(n[0], n[1]);
         }
 
-        private void dealer()
+        private void dealer() //.The logic behind the dealer and his score
         {
             int d = 0;
 
@@ -34,7 +34,7 @@ namespace Games
             n[0] = d;
         }
 
-        private void player()
+        private void player() //.The logic behind the player and his score
         {
 		    
             int p = 0;
@@ -61,7 +61,7 @@ namespace Games
             n[1] = p;
         }
 
-        private void getResult(int d , int p) 
+        private void getResult(int d , int p) //.Finds the result of weather the user won or lost
         {
             bool win;
 

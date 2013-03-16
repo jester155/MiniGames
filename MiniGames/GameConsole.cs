@@ -9,7 +9,6 @@ using System.Text;
 using System.Threading.Tasks;
 using Bank;
 using Games;
-using MiniGames;
 
 namespace GameConsole
 {
@@ -25,7 +24,7 @@ namespace GameConsole
             menu();
         }
 
-        private static void menu() //The menu system the is the main controller of the program
+        private static void menu() //.The menu system the is the main controller of the program
         {
             CoinFlip coin = new CoinFlip();
             NumberGuess number = new NumberGuess();
@@ -59,11 +58,9 @@ namespace GameConsole
                         break;
                 }
 
-                bool c = Money.money.canContinue();
-
-                //This menu needs to be reworked for proper functionality.
-                  //Right now it needs to be able to read only yes or no and present an error otherwise
-                if (c == true)
+                //.This menu needs to be reworked for proper functionality.
+                  //.Right now it needs to be able to read only yes or no and present an error otherwise
+                if (Money.money.canContinue() == true)
                 {
                     Console.WriteLine("Would you like to continue?");
                     choice = Console.ReadLine();
@@ -79,17 +76,17 @@ namespace GameConsole
             newGame();
         }
 
-        private static void exit() //Exits the application
+        private static void exit() //.Exits the application
         {
             Environment.Exit(0);
         }
 
-        private static void newGame() //Start a new game and resets the money count
+        private static void newGame() //.Start a new game and resets the money count
         {
             Console.WriteLine("Would you like to start a new game?");
             string d = Console.ReadLine();
 
-            //Will Reset the money if they wish to play a new game
+            //.Will Reset the money if they wish to play a new game
             if (d.Equals("yes"))
             {
                 Money.money.resetMoney();
@@ -102,6 +99,7 @@ namespace GameConsole
                 Console.WriteLine("{0} is an invalid option", d);
                 newGame();
             }
+        
         }
 
     }
