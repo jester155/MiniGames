@@ -54,19 +54,19 @@ namespace Games
             Console.WriteLine("Call heads or tails");
             String h = Console.ReadLine();
 
-            if (h.ToUpper() == "HEADS")
+            if (h.EqualsIgnoreCase("heads"))
             {
-                Console.WriteLine("You have chosen {0}!", h);
+                Console.WriteLine("You have chosen {0}!", h.ToLower());
                 x = 1;
             }
             else if (h.ToUpper() == "TAILS")
             {
-                Console.WriteLine("You have chosen {0}!", h);
+                Console.WriteLine("You have chosen {0}!", h.ToLower());
                 x = 2;
             }
             else
             {
-                Console.WriteLine("{0} is not a valid entry", h);
+                Console.WriteLine("{0} is not a valid entry", h.ToLower());
                 call();
             }
             return x;

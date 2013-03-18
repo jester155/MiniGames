@@ -43,6 +43,7 @@
     <Compile Include="CoinFlip.cs" />
     <Compile Include="NumberGuess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StringExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Bank\Bank.csproj">
