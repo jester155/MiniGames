@@ -54,7 +54,7 @@ namespace Games
             Console.WriteLine("Call heads or tails");
             String h = Console.ReadLine();
 
-            if (h.EqualsIgnoreCase("heads"))
+            if (h.equalsIgnoreCase("heads"))
             {
                 Console.WriteLine("You have chosen {0}!", h.ToLower());
                 x = 1;
