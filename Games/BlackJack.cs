@@ -12,7 +12,7 @@ namespace Games
         private static Random r = new Random(Environment.TickCount);
         private int[] n = new int[3]; //.Holds dealer score [0], player score [1] and bet information [2]
 
-        public void start() //.Beginning of the game
+        public void Start() //.Beginning of the game
         {
             Bet b = new Bet();
             Console.WriteLine("Welcome to Black Jack.\nRemember in this dealer always wins.");
@@ -40,7 +40,7 @@ namespace Games
             int p = 0;
 		    String decision = "hit";
 		
-		    while(p < 21 && decision.equalsIgnoreCase("hit"))
+		    while(p < 21 && decision.EqualsIgnoreCase("hit"))
             {
 			
 			    p = p + r.Next(0, 11) + 1;

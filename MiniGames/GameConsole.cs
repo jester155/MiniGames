@@ -45,13 +45,13 @@ namespace GameConsole
                 switch (game)
                 {
                     case 1:
-                        coin.start();
+                        coin.Start();
                         break;
                     case 2:
-                        number.start();
+                        number.Start();
                         break;
                     case 3:
-                        bj.start();
+                        bj.Start();
                         break;
                     default:
                         choice = "no";

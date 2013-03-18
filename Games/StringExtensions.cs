@@ -8,7 +8,7 @@ namespace Games
 {
     public static class StringExtensions
     {
-        public static bool equalsIgnoreCase(this string value, string compare) //.Compares a tring regaurdless of case
+        public static bool EqualsIgnoreCase(this string value, string compare) //.Compares a tring regaurdless of case
         {
             return compare.ToLower() == value.ToLower();
         }

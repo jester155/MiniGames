@@ -12,7 +12,7 @@ namespace Games
         private int bet; //.Holds the bet information
         Random r = new Random(Environment.TickCount);
         
-        public void start() //.Beginning of the game
+        public void Start() //.Beginning of the game
         {
             Bet b = new Bet();
             Console.WriteLine("Flip a coin. Best of three and you win.");
@@ -54,7 +54,7 @@ namespace Games
             Console.WriteLine("Call heads or tails");
             String h = Console.ReadLine();
 
-            if (h.equalsIgnoreCase("heads"))
+            if (h.EqualsIgnoreCase("heads"))
             {
                 Console.WriteLine("You have chosen {0}!", h.ToLower());
                 x = 1;

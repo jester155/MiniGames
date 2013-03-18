@@ -13,7 +13,7 @@ namespace Games
         Random r = new Random(Environment.TickCount);
         Bet b = new Bet();
     
-        public void start() //.Signals the start of the program
+        public void Start() //.Signals the start of the program
         {
             Console.WriteLine("You will guess a number 1-5 if the number is correct you win");
             bet = b.placeBet();
