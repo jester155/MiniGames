@@ -26,6 +26,7 @@ namespace GameConsole
 
         private static void menu() //.The menu system the is the main controller of the program
         {
+            String [] games = new String[] {"Coin flip", "Guess a Number", "Black Jack"};
             CoinFlip coin = new CoinFlip();
             NumberGuess number = new NumberGuess();
             BlackJack bj = new BlackJack();
@@ -35,9 +36,15 @@ namespace GameConsole
             {
                 Console.WriteLine("You have ${0}", Money.money.amount());
                 Console.WriteLine("Which game would you like you like to play?");
-                Console.WriteLine("1: Coin Flip");
-                Console.WriteLine("2: Guess a Number");
-                Console.WriteLine("3: Black Jack");
+                
+                {
+                    int i = games.Length - 1;
+                    foreach (String item in games)
+                        Console.WriteLine("{0}: {1}", games.Length - i--, item);
+                }
+                //for (int i = 0; i < games.Length; i++)
+                //    Console.WriteLine("{0}: {1}", i + 1, games[i]);
+
                 string g = Console.ReadLine();
                 int game;
                 int.TryParse(g, out game);
@@ -59,7 +66,7 @@ namespace GameConsole
                 }
 
                 //.This menu needs to be reworked for proper functionality.
-                  //.Right now it needs to be able to read only yes or no and present an error otherwise
+                //.Right now it needs to be able to read only yes or no and present an error otherwise
                 if (Money.money.canContinue() == true)
                 {
                     Console.WriteLine("Would you like to continue?");
@@ -72,7 +79,7 @@ namespace GameConsole
                 }
 
 
-            } while (choice != "no");
+            } while (choice.EqualsIgnoreCase("yes"));
             newGame();
         }
 
@@ -87,12 +94,12 @@ namespace GameConsole
             string d = Console.ReadLine();
 
             //.Will Reset the money if they wish to play a new game
-            if (d.Equals("yes"))
+            if (d.EqualsIgnoreCase("yes"))
             {
                 Money.money.resetMoney();
                 menu();
             }
-            else if (d.Equals("no"))
+            else if (d.EqualsIgnoreCase("no"))
                 exit();
             else
             {

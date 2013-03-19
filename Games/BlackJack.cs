@@ -54,7 +54,7 @@ namespace Games
 				    Console.WriteLine("Hit or stay?");
                     Console.ForegroundColor = ConsoleColor.DarkGreen;
                         decision = Console.ReadLine();
-                        Console.ResetColor();
+                    Console.ResetColor();
 			    }
 
 		    }
