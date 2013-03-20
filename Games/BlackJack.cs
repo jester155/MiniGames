@@ -61,7 +61,7 @@ namespace Games
             n[1] = p;
         }
 
-        private void getResult(int d , int p) //.Finds the result of weather the user won or lost
+        private void getResult(int d , int p) //.Finds the result of whether the user won or lost
         {
             bool win;
 
