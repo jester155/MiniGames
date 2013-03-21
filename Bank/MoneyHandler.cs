@@ -19,11 +19,11 @@ namespace Bank
         {
             if (w == true)
             {
-                money = money + (uint)b;
+                money += (uint)b;
             }
             else
             {
-                money = money - (uint)b;
+                money -= (uint)b;
             }
         }
 
@@ -31,11 +31,11 @@ namespace Bank
         {
             if (w == true)
             {
-                money = money + ((uint)b * 2);
+                money += ((uint)b * 2);
             }
             else
             {
-                money = money - (uint)b;
+                money -= (uint)b;
             }
         }
 

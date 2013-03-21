@@ -15,7 +15,7 @@ namespace Games
         public void Start() //.Beginning of the game
         {
             Bet b = new Bet();
-            Console.WriteLine("Welcome to Black Jack.\nRemember in this dealer always wins.");
+            Console.WriteLine("Welcome to Black Jack.\nRemember in this, dealer always wins.");
             n[2] = b.placeBet();
             dealer();
             player();
@@ -25,10 +25,23 @@ namespace Games
         private void dealer() //.The logic behind the dealer and his score
         {
             int d = 0;
+            int firstCard = r.Next(0, 11) + 1;
+            if (firstCard == 11)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\nThe dealer's first card is an ace");
+                Console.ResetColor();
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\nThe dealer's first card is {0}\n", firstCard);
+                Console.ResetColor();
+            }
 
             while (d < 16)
             {
-                d = d + r.Next(0, 11) + 1;
+                d += firstCard + r.Next(0, 11) + 1;
             }
 
             n[0] = d;
@@ -39,15 +52,41 @@ namespace Games
 		    
             int p = 0;
 		    String decision = "hit";
-		
+            String useAce;
+            int aceCounter = 0;
+            int ace = 0;
+            int aceStringHolder = aceCounter;
 		    while(p < 21 && decision.EqualsIgnoreCase("hit"))
             {
-			
-			    p = p + r.Next(0, 11) + 1;
+                
+                int aceChance = r.Next(0, 11) + 1;
+                if (aceChance == 11 || aceCounter > 0)
+                {
+                    aceCounter++;
+                    aceChance = 0;
+                    if (aceCounter > 0)
+                    {
+                        Console.WriteLine("You have drew an ace, you have {0}, would you like to use them? [yes / no]", aceCounter);
+                        useAce = Console.ReadLine();
+                        if (useAce.EqualsIgnoreCase("yes"))
+                        {
+                            for (int i = 0; i < aceCounter; i++)
+                            {
+                                int acex = 0;
+                                Console.WriteLine("Ace number {0}: 1 or 11", aceStringHolder--);
+                                String a = Console.ReadLine();
+                                int.TryParse(a, out acex);
+                                ace += acex;
+                            }
+                        }
+                    }
+                }
+
+                    p += ace + aceChance;
 			
 			    Console.WriteLine("You have {0}", p);
 			
-			    if(p > 21)
+			    if(p >= 21)
 				    decision = "stay";
 			    else 
                 {
@@ -61,7 +100,7 @@ namespace Games
             n[1] = p;
         }
 
-        private void getResult(int d , int p) //.Finds the result of whether the user won or lost
+        private void getResult(int d , int p) //.Finds the result of weather the user won or lost
         {
             bool win;
 
