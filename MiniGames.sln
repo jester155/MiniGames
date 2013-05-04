@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bank", "Bank\Bank.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Games", "Games\Games.csproj", "{FD35EFCC-408D-441D-8A33-E7C9F1A8ECE2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{839AFC8C-6E63-40AF-B4AB-1BF6080C49B3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,5 +30,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4B43F3D1-9C80-4256-90FD-7237756BD63A} = {839AFC8C-6E63-40AF-B4AB-1BF6080C49B3}
+		{FD35EFCC-408D-441D-8A33-E7C9F1A8ECE2} = {839AFC8C-6E63-40AF-B4AB-1BF6080C49B3}
 	EndGlobalSection
 EndGlobal
